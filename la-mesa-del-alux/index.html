@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Mesa del Alux · Muestra de Vitrina iAM</title>
+<meta name="description" content="Cocina yucateca hecha en casa. Pide por WhatsApp y recoge o recibe en tu puerta.">
+<meta name="theme-color" content="#a83d17">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="La Mesa del Alux">
+<meta property="og:description" content="Cocina yucateca hecha en casa. Pide por WhatsApp y recoge o recibe en tu puerta.">
+<style>
+@font-face{font-family:"Space Grotesk";src:url(../assets/grotesk.woff2) format("woff2");font-weight:300 700;font-display:swap}
+:root{--fondo:#fbf6ec;--tinta:#2b1d14;--acento:#a83d17;--suave:#f1e2cc;--sobre:#fff;--panel:#ffffff;--borde:#e8dcc7;--sub:#6a5849}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:96px}
+a{color:inherit}
+h1,h2,h3{font-family:ui-serif, "Iowan Old Style", Georgia, "Times New Roman", serif;font-weight:600;letter-spacing:-.015em;margin:0;line-height:1.12}
+.aviso{background:var(--tinta);color:var(--fondo);font-size:13px;padding:8px 16px;display:flex;gap:10px;justify-content:space-between;align-items:center}
+.aviso a{font-weight:700;white-space:nowrap}
+.envoltura{max-width:760px;margin:0 auto}
+.portada{position:relative;min-height:320px;display:flex;align-items:flex-end;color:#fff;background:#222 center/cover no-repeat}
+.portada::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.76),rgba(0,0,0,.14) 62%)}
+.portada>div{position:relative;z-index:1;padding:28px 16px 20px;width:100%}
+.portada h1{font-size:38px;text-wrap:balance}
+.portada p{margin:8px 0 12px;font-size:16px;max-width:46ch;text-wrap:pretty}
+.estado{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;background:rgba(0,0,0,.42);backdrop-filter:blur(4px);padding:5px 11px;border-radius:999px}
+.estado i{width:8px;height:8px;border-radius:50%;background:#9aa0a6}
+.estado.abierto i{background:#6fe39a}
+nav.cats{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:10px 16px;background:var(--fondo);border-bottom:1px solid var(--borde);scrollbar-width:none}
+nav.cats a{flex:none;text-decoration:none;font-size:14px;font-weight:600;padding:7px 13px;border-radius:999px;background:var(--suave);color:var(--tinta)}
+main{padding:0 16px}
+section{padding-top:24px;scroll-margin-top:52px}
+section>h2{font-size:24px;margin-bottom:12px}
+.lista{display:flex;flex-direction:column;gap:12px}
+.item{display:grid;grid-template-columns:112px 1fr;background:var(--panel);border:1px solid var(--borde);border-radius:16px;overflow:hidden;min-height:124px}
+.item.sin-foto{grid-template-columns:1fr}
+.item img{width:112px;height:100%;min-height:124px;object-fit:cover;display:block}
+.datos{padding:12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.datos h3{font-size:17px}
+.datos p{margin:0;color:var(--sub);font-size:14px;line-height:1.35}
+.pie{margin-top:auto;padding-top:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pie b{font-variant-numeric:tabular-nums;font-size:15.5px}
+.control{display:flex;align-items:center;gap:8px;flex:none}
+.control button{font:inherit;font-weight:700;border:0;background:var(--suave);color:var(--tinta);min-height:40px;min-width:40px;padding:0 13px;border-radius:999px;cursor:pointer}
+.control .cant{min-width:18px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.control button:focus-visible,nav.cats a:focus-visible,.barra button:focus-visible,dialog button:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.barra{position:fixed;z-index:6;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--fondo) 72%,transparent);pointer-events:none}
+.barra button{pointer-events:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;max-width:728px;margin:0 auto;font:inherit;font-weight:700;font-size:16px;border:0;border-radius:14px;padding:15px 18px;background:var(--acento);color:var(--sobre);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.barra button[hidden]{display:none}
+footer{margin-top:32px;padding:20px 16px;border-top:1px solid var(--borde);color:var(--sub);font-size:14px}
+footer h2{font-size:18px;color:var(--tinta);margin-bottom:6px}
+footer ul{list-style:none;margin:0 0 10px;padding:0}
+footer .credito{font-size:12.5px;margin:14px 0 0}
+dialog{border:0;padding:0;width:min(520px,calc(100vw - 24px));max-height:calc(100dvh - 32px);border-radius:18px;background:var(--panel);color:var(--tinta);box-shadow:0 24px 70px rgba(0,0,0,.34)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.caja{padding:18px;display:flex;flex-direction:column;gap:12px}
+.caja h2{font-size:22px}
+.caja label{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600}
+.caja input,.caja textarea{font:inherit;font-weight:400;border:1px solid var(--borde);border-radius:10px;padding:10px;background:var(--fondo);color:var(--tinta);width:100%}
+.burbuja{align-self:flex-end;max-width:92%;background:#dcf8c6;color:#111b21;padding:10px 12px;border-radius:12px 12px 2px 12px;white-space:pre-wrap;font-size:14.5px;line-height:1.4;overflow-wrap:anywhere}
+.nota-envio{margin:0;font-size:13.5px;color:var(--sub)}
+.botones{display:flex;flex-direction:column;gap:8px}
+.botones a,.botones button{font:inherit;font-weight:700;text-align:center;text-decoration:none;border:0;border-radius:12px;padding:13px;cursor:pointer}
+.primario{background:var(--acento);color:var(--sobre)}
+.secundario{background:var(--suave);color:var(--tinta)}
+@media (min-width:640px){.portada{min-height:380px}.portada h1{font-size:50px}.lista{display:grid;grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="aviso"><span>Muestra: negocio ficticio, fotos generadas con IA.</span><a href="../">Ver la oferta</a></div>
+<div class="envoltura">
+  <header class="portada" style="background-image:url('alux-hero.jpg')"><div>
+    <h1>La Mesa del Alux</h1>
+    <p>Cocina yucateca hecha en casa. Pide por WhatsApp y recoge o recibe en tu puerta.</p>
+    <span class="estado" id="estado"><i></i><span>Horario</span></span>
+  </div></header>
+  <nav class="cats" aria-label="Categorías"><a href="#cat-0">Antojitos</a><a href="#cat-1">Platos fuertes</a><a href="#cat-2">Sopas</a><a href="#cat-3">Bebidas</a></nav>
+  <main>
+    <section id="cat-0" aria-labelledby="t-0">
+      <h2 id="t-0">Antojitos</h2>
+      <div class="lista">
+      <article class="item" data-id="0-0">
+        <img src="alux-panuchos.jpg" alt="Panuchos" loading="lazy" width="300" height="300">
+        <div class="datos">
+          <h3>Panuchos</h3>
+          <p>Tres piezas con pavo, lechuga, tomate y cebolla encurtida.</p>
+          <div class="pie"><b>$120</b>
+            <div class="control" aria-label="Cantidad de Panuchos">
+              <button type="button" class="menos" data-accion="menos" aria-label="Quitar Panuchos" hidden>−</button>
+              <output class="cant" hidden>0</output>
+              <button type="button" class="mas" data-accion="mas" aria-label="Agregar Panuchos">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="item" data-id="0-1">
+        <img src="alux-papadzules.jpg" alt="Papadzules" loading="lazy" width="300" height="300">
+        <div class="datos">
+          <h3>Papadzules</h3>
+          <p>Cuatro piezas con salsa de pepita y tomate.</p>
+          <div class="pie"><b>$135</b>
+            <div class="control" aria-label="Cantidad de Papadzules">
+              <button type="button" class="menos" data-accion="menos" aria-label="Quitar Papadzules" hidden>−</button>
+              <output class="cant" hidden>0</output>
+              <button type="button" class="mas" data-accion="mas" aria-label="Agregar Papadzules">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </article></div>
+    </section>
+    <section id="cat-1" aria-labelledby="t-1">
+      <h2 id="t-1">Platos fuertes</h2>
+      <div class="lista">
+      <article class="item" data-id="1-0">
+        <img src="alux-cochinita.jpg" alt="Cochinita pibil" loading="lazy" width="300" height="300">
+        <div class="datos">
+          <h3>Cochinita pibil</h3>
+          <p>Tres tacos con cebolla encurtida.</p>
+          <div class="pie"><b>$150</b>
+            <div class="control" aria-label="Cantidad de Cochinita pibil">
+              <button type="button" class="menos" data-accion="menos" aria-label="Quitar Cochinita pibil" hidden>−</button>
+              <output class="cant" hidden>0</output>
+              <button type="button" class="mas" data-accion="mas" aria-label="Agregar Cochinita pibil">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="item" data-id="1-1">
+        <img src="alux-pocchuc.jpg" alt="Poc chuc" loading="lazy" width="300" height="300">
+        <div class="datos">
+          <h3>Poc chuc</h3>
+          <p>Cerdo a la parrilla, frijol y tortillas.</p>
+          <div class="pie"><b>$189</b>
+            <div class="control" aria-label="Cantidad de Poc chuc">
+              <button type="button" class="menos" data-accion="menos" aria-label="Quitar Poc chuc" hidden>−</button>
+              <output class="cant" hidden>0</output>
+              <button type="button" class="mas" data-accion="mas" aria-label="Agregar Poc chuc">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </article></div>
+    </section>
+    <section id="cat-2" aria-labelledby="t-2">
+      <h2 id="t-2">Sopas</h2>
+      <div class="lista">
+      <article class="item" data-id="2-0">
+        <img src="alux-sopa.jpg" alt="Sopa de lima" loading="lazy" width="300" height="300">
+        <div class="datos">
+          <h3>Sopa de lima</h3>
+          <p>Pollo, tiras de tortilla y lima.</p>
+          <div class="pie"><b>$110</b>
+            <div class="control" aria-label="Cantidad de Sopa de lima">
+              <button type="button" class="menos" data-accion="menos" aria-label="Quitar Sopa de lima" hidden>−</button>
+              <output class="cant" hidden>0</output>
+              <button type="button" class="mas" data-accion="mas" aria-label="Agregar Sopa de lima">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </article></div>
+    </section>
+    <section id="cat-3" aria-labelledby="t-3">
+      <h2 id="t-3">Bebidas</h2>
+      <div class="lista">
+      <article class="item" data-id="3-0">
+        <img src="alux-chaya.jpg" alt="Agua de chaya" loading="lazy" width="300" height="300">
+        <div class="datos">
+          <h3>Agua de chaya</h3>
+          <p>Un litro, con limón.</p>
+          <div class="pie"><b>$60</b>
+            <div class="control" aria-label="Cantidad de Agua de chaya">
+              <button type="button" class="menos" data-accion="menos" aria-label="Quitar Agua de chaya" hidden>−</button>
+              <output class="cant" hidden>0</output>
+              <button type="button" class="mas" data-accion="mas" aria-label="Agregar Agua de chaya">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </article></div>
+    </section></main>
+  <footer>
+    <h2>La Mesa del Alux</h2>
+    <ul><li>Lunes a domingo, 8:00 a 17:00</li></ul>
+    <p style="margin:0">Mérida, Yucatán</p>
+    <p class="credito">Hecho con Vitrina iAM · iAM Solutions</p>
+  </footer>
+</div>
+<div class="barra"><button type="button" id="abrir" hidden><span id="resumen"></span><span>Ver pedido</span></button></div>
+<dialog id="envio" aria-labelledby="envTitulo"><form method="dialog" class="caja">
+  <h2 id="envTitulo">Tu pedido</h2>
+  <label>Tu nombre<input id="nombre" autocomplete="name" placeholder="Opcional"></label>
+  <label>Nota<textarea id="nota" rows="2" placeholder="Dirección, sin cebolla, hora de entrega…"></textarea></label>
+  <p class="nota-envio">Así le llegaría este mensaje al negocio por WhatsApp:</p>
+  <div class="burbuja" id="burbuja"></div>
+  <div class="botones">
+    <a class="primario" id="enviar" target="_blank" rel="noopener">Quiero una así para mi negocio</a>
+    <button class="secundario" value="cerrar">Seguir viendo</button>
+  </div>
+</form></dialog>
+<script>
+const N = {"nombre":"La Mesa del Alux","modo":"pedido","whatsapp":"5219995374825","muestra":true,"rubro":"restaurante","horario":[{"dias":[0,1,2,3,4,5,6],"abre":"08:00","cierra":"17:00","texto":"Lunes a domingo, 8:00 a 17:00"}],"mensajeMuestra":"Hola, vi la muestra de restaurante de Vitrina iAM y quiero la mía.","items":{"0-0":{"nombre":"Panuchos","precio":120,"desde":false},"0-1":{"nombre":"Papadzules","precio":135,"desde":false},"1-0":{"nombre":"Cochinita pibil","precio":150,"desde":false},"1-1":{"nombre":"Poc chuc","precio":189,"desde":false},"2-0":{"nombre":"Sopa de lima","precio":110,"desde":false},"3-0":{"nombre":"Agua de chaya","precio":60,"desde":false}}};
+const carrito = {};
+const $ = (id) => document.getElementById(id);
+const mx = (n) => '$' + Number(n).toLocaleString('es-MX');
+function pintarEstado() {
+  const ahora = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Merida' }));
+  const dia = ahora.getDay(), min = ahora.getHours() * 60 + ahora.getMinutes();
+  const hoy = N.horario.find(h => h.dias.includes(dia));
+  const aMin = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+  const abierto = !!hoy && min >= aMin(hoy.abre) && min < aMin(hoy.cierra);
+  $('estado').classList.toggle('abierto', abierto);
+  $('estado').lastElementChild.textContent = abierto ? 'Abierto hasta las ' + hoy.cierra : (hoy && min < aMin(hoy.abre) ? 'Abre hoy a las ' + hoy.abre : 'Cerrado por ahora');
+}
+function mensaje() {
+  const lineas = Object.entries(carrito).map(([id, c]) => { const it = N.items[id]; return N.modo === 'pedido' ? '• ' + c + ' × ' + it.nombre + (it.precio != null ? ': ' + mx(it.precio * c) : '') : '• ' + it.nombre; });
+  const total = Object.entries(carrito).reduce((s, [id, c]) => s + (N.items[id].precio || 0) * c, 0);
+  const nombre = $('nombre').value.trim(), nota = $('nota').value.trim();
+  const apertura = 'Hola, ' + N.nombre + '.' + (nombre ? ' Soy ' + nombre + '.' : '');
+  const cuerpo = N.modo === 'pedido' ? 'Quiero hacer este pedido:\n' + lineas.join('\n') + '\nTotal: ' + mx(total) : 'Quiero agendar:\n' + lineas.join('\n');
+  return apertura + '\n' + cuerpo + (nota ? '\nNota: ' + nota : '');
+}
+function pintar() {
+  const piezas = Object.values(carrito).reduce((a, b) => a + b, 0);
+  const total = Object.entries(carrito).reduce((s, [id, c]) => s + (N.items[id].precio || 0) * c, 0);
+  document.querySelectorAll('.item').forEach(el => {
+    const c = carrito[el.dataset.id] || 0; const mas = el.querySelector('.mas');
+    el.querySelector('.menos').hidden = !c; const sal = el.querySelector('.cant'); sal.hidden = !c; sal.textContent = c;
+    mas.textContent = c ? '+' : 'Agregar';
+  });
+  $('abrir').hidden = !piezas;
+  $('resumen').textContent = N.modo === 'pedido' ? piezas + (piezas === 1 ? ' producto' : ' productos') + ' · ' + mx(total) : piezas + (piezas === 1 ? ' servicio' : ' servicios');
+  const msg = mensaje();
+  $('burbuja').textContent = msg;
+  $('enviar').href = 'https://wa.me/' + N.whatsapp + '?text=' + encodeURIComponent(N.muestra ? N.mensajeMuestra : msg);
+}
+document.querySelector('main').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-accion]'); if (!b) return;
+  const id = b.closest('.item').dataset.id;
+  carrito[id] = (carrito[id] || 0) + (b.dataset.accion === 'mas' ? 1 : -1);
+  if (carrito[id] <= 0) delete carrito[id];
+  pintar();
+});
+$('abrir').onclick = () => { pintar(); $('envio').showModal(); };
+$('nombre').oninput = $('nota').oninput = pintar;
+pintarEstado(); pintar();
+</script>
+</body>
+</html>
