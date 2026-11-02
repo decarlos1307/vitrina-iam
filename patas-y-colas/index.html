@@ -167,7 +167,7 @@ function mensaje() {
   const total = Object.entries(carrito).reduce((s, [id, c]) => s + (N.items[id].precio || 0) * c, 0);
   const nombre = $('nombre').value.trim(), nota = $('nota').value.trim();
   const apertura = 'Hola, ' + N.nombre + '.' + (nombre ? ' Soy ' + nombre + '.' : '');
-  const cuerpo = N.modo === 'pedido' ? 'Quiero hacer este pedido:\n' + lineas.join('\n') + '\nTotal: ' + mx(total) : 'Quiero agendar:\n' + lineas.join('\n');
+  const cuerpo = N.modo === 'pedido' ? 'Quiero hacer este pedido:\n' + lineas.join('\n') + '\nTotal: ' + mx(total) : 'Quiero solicitar una cita para:\n' + lineas.join('\n');
   return apertura + '\n' + cuerpo + (nota ? '\nNota: ' + nota : '');
 }
 function pintar() {
